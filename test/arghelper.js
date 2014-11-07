@@ -276,6 +276,15 @@ describe('arghelper', function() {
       expect(result.url).to.equal('http://localhost');
     });
 
+    it('should only set body when params has keys', function () {
+      var opts = {
+        method: 'POST',
+        params: { }
+      };
+      var result = helpers.convertReqParams(opts);
+      expect(result.body).to.be.undefined;
+    });
+
   });
 
 
