@@ -77,7 +77,7 @@ describe('arghelper', function() {
   describe('#convertAuth', function () {
 
     it('should construct auth object', function () {
-      var opts = { }
+      var opts = { };
       var result = helpers.convertAuth(opts);
       expect(result.auth).to.not.be.undefined;      
     });
@@ -89,7 +89,7 @@ describe('arghelper', function() {
       };
       var result = helpers.convertAuth(opts);      
       expect(result.auth.user).to.equal('username');
-    })
+    });
 
 
     it('should create pass property on auth object from password', function () {    
@@ -261,7 +261,7 @@ describe('arghelper', function() {
       var opts = {
         url: 'http://localhost',
         method: 'GET'
-      }
+      };
       var result = helpers.convertReqParams(opts);
       expect(result.url).to.equal('http://localhost');
     });
@@ -271,7 +271,7 @@ describe('arghelper', function() {
       var opts = {
         url: 'http://localhost',
         method: 'POST'
-      }
+      };
       var result = helpers.convertReqParams(opts);
       expect(result.url).to.equal('http://localhost');
     });
@@ -366,11 +366,11 @@ describe('arghelper', function() {
     it('should handle no params', function () {
       var opts = {
         url: 'http://localhost'
-      }
+      };
       var result = helpers.convertUrlParams(opts);
       expect(result.url).to.equal('http://localhost');
     });
 
   });
 
-})
+});
