@@ -94,7 +94,21 @@ skytap.environments.create({ configuration_id: 1234 }, next);
 skytap.environments.update({ configuration_id: 1234, name: 'My new name' }, next);
 
 // Delete an environment
-skytap.environments.del({ configuration_id: 1234 }, output);
+skytap.environments.del({ configuration_id: 1234 }, next);
+
+// Start an environment
+skytap.environments.start({ configuration_id: 1234 }, next);
+
+// Stop an environment
+skytap.environments.stop({ configuration_id: 1234 }, next);
+
+// Suspend an environment
+skytap.environments.suspend({ configuration_id: 1234 }, next);
+
+// Wait for environment status
+skytap.environments.waitForState({ configuration_id: 1234, runstate: 'running' }, next);
+skytap.environments.waitForState({ configuration_id: 1234, runstate: 'stopped' }, next);
+skytap.environments.waitForState({ configuration_id: 1234, runstate: 'suspended' }, next);
 ```
 
 
