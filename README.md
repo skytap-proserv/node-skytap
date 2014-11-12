@@ -6,17 +6,17 @@ This library wraps the Skytap API for use in Node.js applications. It is designe
 ### Usage
 
 Install the module via NPM
-```
+```bash
 npm install node-skytap
 ```
 
 You can then include it as needed
-```
+```javascript
 var Skytap = require('node-skytap');
 ```
 
 You can obtain your API token
-```
+```javascript
 var params = { 
   username: 'skytap_username',
   password: 'sktyap_password'
@@ -28,7 +28,7 @@ var token = Skytap.token(params, function(err, token) {
 ```
 
 You should make calls using your token, though you can use the password if you so choose. To initialize the API, use the `init` static function to obtain an instance of the API code and include your `username` and `token`.
-```
+```javascript
 var skytap = Skytap.init({
   username: 'skytap_username',
   token: 'skytap_token'
@@ -37,7 +37,7 @@ var skytap = Skytap.init({
 
 
 You can then use this instance to make calls to the API.  Calls support both node callbacks and Promises.
-```
+```javascript
 // Using Node callbacks
 skytap.projects.list(function(err, projects) {
   console.log(err || projects);
@@ -56,7 +56,7 @@ skytap.projects.list()
 Refer to the source code for a full list of function calls and required parameters. Some of the functionality is listed below with examples of usage.
 
 ####Projects
-```
+```javascript
 // List Projects 
 skytap.projects.list(next);
 
@@ -77,7 +77,7 @@ skytap.projects.removeEnvironment({ project_id: 123, configuration_id: 1234 }, n
 ```
 
 ####Environments
-```
+```javascript
 // List environments
 skytap.environments.list(next);
 
@@ -118,7 +118,7 @@ skytap.environments.updateUserdata({ configuration_id: 1234, contents: 'Somethin
 ```
 
 ####VMs
-```
+```javascript
 // Get a VM
 skytap.vms.get({ configuration_id: 1234, vm_id: 1 }, next);
 skytap.vms.get({ template_id: 2222, vm_id: 2}, next);
