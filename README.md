@@ -109,6 +109,35 @@ skytap.environments.suspend({ configuration_id: 1234 }, next);
 skytap.environments.waitForState({ configuration_id: 1234, runstate: 'running' }, next);
 skytap.environments.waitForState({ configuration_id: 1234, runstate: 'stopped' }, next);
 skytap.environments.waitForState({ configuration_id: 1234, runstate: 'suspended' }, next);
+
+// Get user_data
+skytap.environments.userdata({ configuration_id: 1234 }, next);
+
+// Update user_data
+skytap.environments.updateUserdata({ configuration_id: 1234, contents: 'Something' }, next);
+```
+
+####VMs
+```
+// Get a VM
+skytap.vms.get({ configuration_id: 1234, vm_id: 1 }, next);
+skytap.vms.get({ template_id: 2222, vm_id: 2}, next);
+
+// Update a VM
+skytap.vms.update({ configuration_id: 1234, vm_id: 1, name: 'new name' }, next);
+skytap.vms.update({ template_id: 2222, vm_id: 2, name: 'new name' }, next);
+
+// Deletes a VM
+skytap.vms.del({ configuration_id: 1234, vm_id: 1 }, next);
+skytap.vms.del({ template_id: 2222, vm_id: 2 }, next);
+
+// Get user_data
+skytap.vms.userdata({ configuration_id: 1234, vm_id: 1 }, next);
+skytap.vms.userdata({ template_id: 2222, vm_id: 2 }, next);
+
+// Update user_data
+skytap.vms.userdata({ configuration_id: 1234, vm_id: 1, contents: 'Something' }, next);
+skytap.vms.userdata({ template_id: 2222, vm_id: 2, contents: 'Something' }, next);
 ```
 
 
