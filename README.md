@@ -140,6 +140,27 @@ skytap.vms.userdata({ configuration_id: 1234, vm_id: 1, contents: 'Something' },
 skytap.vms.userdata({ template_id: 2222, vm_id: 2, contents: 'Something' }, next);
 ```
 
+####VPNs
+```javascript
+// List VPNs
+skytap.vpns.list(next);
+
+// Get a VPN
+skytap.vpns.get({ vpn_id: 'vpn-123' }, next);
+
+// Attach a VPN to a network on a configuration
+skytap.vpns.attach({ configuration_id: 1234, network_id: 555, vpn_id: 'vpn-123' }, next);
+
+// Detach a VPN from a network on a configuration
+skytap.vpns.detach({ configuration_id: 1234, network_id: 555, vpn_id: 'vpn-123' }, next);
+
+// Connect a VPN on a network on a configuration
+skytap.vpns.connect({ configuration_id: 1234, network_id: 555, vpn_id: 'vpn-123' }, next);
+
+// Disconnect a VPN on a network on a configuration
+skytap.vpns.connect({ configuration_id: 1234, network_id: 555, vpn_id: 'vpn-123' }, next);
+```
+
 
 ### Contributing
 
