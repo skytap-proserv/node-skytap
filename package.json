@@ -3,6 +3,10 @@
   "version": "0.1.2",
   "description": "Skytap API wrapper for Node.js",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bmancini55/node-skytap/node-skytap.git"
+  },
   "scripts": {
     "test": "mocha"
   },
