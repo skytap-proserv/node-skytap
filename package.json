@@ -1,12 +1,9 @@
 {
   "name": "node-skytap",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Skytap API wrapper for Node.js",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/fti-technology/node-skytap/node-skytap.git"
-  },
+  "repository": "fti-technology/node-skytap",  
   "scripts": {
     "test": "mocha"
   },
