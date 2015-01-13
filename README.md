@@ -74,6 +74,12 @@ skytap.projects.addEnvironment({ project_id: 123, configuration_id: 1234 }, next
 
 // Remove environment form a project
 skytap.projects.removeEnvironment({ project_id: 123, configuration_id: 1234 }, next);
+
+// Add template to a project
+skytap.projects.addTemplate({ project_id: 123, template_id: 333 }, next);
+
+// Remove template from a project
+skytap.projects.removeTemplate({ project_id: 123, template_id: 333}, next);
 ```
 
 ####Environments
@@ -115,6 +121,24 @@ skytap.environments.userdata({ configuration_id: 1234 }, next);
 
 // Update user_data
 skytap.environments.updateUserdata({ configuration_id: 1234, contents: 'Something' }, next);
+```
+
+####Templates
+```javascript
+// List of templates
+skytap.templates.list(next);
+
+// Get a specific template
+skytap.templates.get({ template_id: 333 }, next);
+
+// Create a template from an environment
+skytap.templates.create({ configuration_id: 123 }, next);
+
+// Update a template
+skytap.templates.update({ template_id: 333, name: 'New name' }, next);
+
+// Delete a template
+skytap.templates.del({ template_id: 333 }, next);
 ```
 
 ####VMs
@@ -169,3 +193,22 @@ Formatting uses spaces instead of tabs and 2-space tabs.
 Please use JSHint via the grunt task `grunt validate`.
 
 Please add proper unit test coverage in accordance with existing test patterns (API methods do not yet have test coverage or parameter validation).
+
+### Change Log
+####0.2.0
+* Added template list/get/create/update/delete
+* Added add/remote template from project
+
+####0.1.3 
+* Moved repository to fti-technology
+
+####0.1.2
+* Added VPN connect/disconnect/attach support
+* Added user_data support for environments and vms
+* Updated code examples
+
+####0.1.1
+* Added start/stop/suspend helpers for environments
+
+####0.1.0
+* Initial release
