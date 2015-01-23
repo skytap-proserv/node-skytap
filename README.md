@@ -27,7 +27,9 @@ var token = Skytap.token(params, function(err, token) {
 })
 ```
 
-You should make calls using your token, though you can use the password if you so choose. To initialize the API, use the `init` static function to obtain an instance of the API code and include your `username` and `token`.
+You should make calls using your token, though you can use the password if you so choose. 
+
+To obtain a new instance of the API Client, use the `init` static function and include your `username` and `token`.
 ```javascript
 var skytap = Skytap.init({
   username: 'skytap_username',
@@ -52,6 +54,47 @@ skytap.projects.list()
   console.log(err);
 })
 ```
+
+###Initializing Skytap API Client
+
+The `Skytap.init` method returns a new instance of the Skytap API Client based on the supplied connection information.  
+
+If you want to use different credentials per-request you can do so by creating a new instance of the client. For example, to list environments for different users, you can do the following:
+
+```
+// create an API client for user1
+var user1 = Skytap.init({ 
+  username: 'skytap_user1',
+  token: 'skytap_user1_token'
+});
+
+// display environments for user1
+user1.environments.list();
+
+var user2 = Skytap.init({
+  username: 'skytap_user2',
+  token: 'skytap_user2_token'
+});
+
+// display environments for user2
+user2.environments.list();
+```
+
+### Skytap Version 2 Methods
+
+You can make requests to Skytap API Version 2 by specifying the `version: 'v2'` options when initializing the client.
+
+```
+var skytap = Skytap.init({
+  username: 'my_username',
+  token: 'my_token',
+  version: 'v2'
+});
+```
+
+At the time of this change GET requests for many of the APIs are successful. POST/PUT/DELETE calls will result in an error. To use by V1 and V2 simulaneously, you will need to create multiple Skytap API Client instances and make your calls accordingly.
+
+### API Reference
 
 Refer to the source code for a full list of function calls and required parameters. Some of the functionality is listed below with examples of usage.
 

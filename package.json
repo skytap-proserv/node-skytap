@@ -1,9 +1,9 @@
 {
   "name": "node-skytap",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Skytap API wrapper for Node.js",
   "main": "index.js",
-  "repository": "fti-technology/node-skytap",  
+  "repository": "fti-technology/node-skytap",
   "scripts": {
     "test": "mocha"
   },
@@ -14,17 +14,17 @@
   "author": "Brian Mancini <bmancini@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "debug": "^2.1.0",
+    "debug": "^2.1.1",
     "q": "^1.0.1",
-    "request": "^2.46.0",
+    "request": "^2.51.0",
     "underscore": "^1.7.0"
   },
   "devDependencies": {
-    "chai": "^1.9.2",
+    "chai": "^1.10.0",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-jshint": "^0.10.0",
-    "grunt-mocha-test": "^0.12.2",
-    "mocha": "^2.0.1"
+    "grunt-mocha-test": "^0.12.7",
+    "mocha": "^2.1.0"
   }
 }
