@@ -61,7 +61,7 @@ The `Skytap.init` method returns a new instance of the Skytap API Client based o
 
 If you want to use different credentials per-request you can do so by creating a new instance of the client. For example, to list environments for different users, you can do the following:
 
-```
+```javascript
 // create an API client for user1
 var user1 = Skytap.init({ 
   username: 'skytap_user1',
@@ -84,7 +84,7 @@ user2.environments.list();
 
 You can make requests to Skytap API Version 2 by specifying the `version: 'v2'` options when initializing the client.
 
-```
+```javascript
 var skytap = Skytap.init({
   username: 'my_username',
   token: 'my_token',
@@ -238,6 +238,9 @@ Please use JSHint via the grunt task `grunt validate`.
 Please add proper unit test coverage in accordance with existing test patterns (API methods do not yet have test coverage or parameter validation).
 
 ### Change Log
+####0.3.0
+* Added support for V2 API calls
+
 ####0.2.0
 * Added template list/get/create/update/delete
 * Added add/remote template from project
