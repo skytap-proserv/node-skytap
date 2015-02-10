@@ -130,6 +130,11 @@ skytap.projects.removeTemplate({ project_id: 123, template_id: 333}, next);
 // List environments
 skytap.environments.list(next);
 
+// List all environments
+// Notes: this requires Administrator access and iterates over all users
+// USE WITH CAUTION!
+skytap.environments.all(next);
+
 // Get a specific environment
 skytap.environments.get({ configuration_id: 1234 }, next);
 
@@ -170,6 +175,11 @@ skytap.environments.updateUserdata({ configuration_id: 1234, contents: 'Somethin
 ```javascript
 // List of templates
 skytap.templates.list(next);
+
+// List all templates
+// Notes: this requires Administrator access and iterates over all users
+// USE WITH CAUTION!
+skytap.templates.all(next);
 
 // Get a specific template
 skytap.templates.get({ template_id: 333 }, next);
@@ -225,7 +235,18 @@ skytap.vpns.detach({ configuration_id: 1234, network_id: 555, vpn_id: 'vpn-123' 
 skytap.vpns.connect({ configuration_id: 1234, network_id: 555, vpn_id: 'vpn-123' }, next);
 
 // Disconnect a VPN on a network on a configuration
-skytap.vpns.connect({ configuration_id: 1234, network_id: 555, vpn_id: 'vpn-123' }, next);
+skytap.vpns.disconnect({ configuration_id: 1234, network_id: 555, vpn_id: 'vpn-123' }, next);
+```
+
+####Users
+```javascript
+
+// List all accessible users
+skytap.users.list(next);
+
+// Get a user
+skytap.users.get({ user_id: 100 }, next);
+
 ```
 
 
@@ -238,6 +259,10 @@ Please use JSHint via the grunt task `grunt validate`.
 Please add proper unit test coverage in accordance with existing test patterns (API methods do not yet have test coverage or parameter validation).
 
 ### Change Log
+####0.4.0
+* Added support for list/get of users
+* Added support for retrieving all accessible environments and templates
+
 ####0.3.0
 * Added support for V2 API calls
 
