@@ -1,5 +1,6 @@
 node-skytap
 ===========
+[![Build Status](https://travis-ci.org/fti-technology/node-skytap.svg?branch=master)](https://travis-ci.org/fti-technology/node-skytap)
 
 This library wraps the Skytap API for use in Node.js applications. It is designed to work with node style callbacks as well as with Promises.  This library is still under active development to build out the full feature set of API calls plus additional functions that are common to managing Skytap environments.
 
