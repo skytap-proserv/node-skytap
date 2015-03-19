@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "fti-technology/node-skytap",
   "scripts": {
-    "test": "mocha"
+    "test": "grunt validate"
   },
   "keywords": [
     "skytap",
