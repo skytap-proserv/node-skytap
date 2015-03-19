@@ -3,4 +3,3 @@ node_js:
   - "node"
   - "iojs"
 before_install: npm install -g grunt-cli
-install: npm install
