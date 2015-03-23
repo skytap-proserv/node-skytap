@@ -250,6 +250,10 @@ skytap.users.get({ user_id: 100 }, next);
 
 ```
 
+####Additional Parameters
+Parameters to an API call that aren't recognized will be added to the query string. One use of this is to query an environment without changing its idle time:
+
+`environments.get({ configuration_id: 1234, keep_idle: true }`
 
 ### Contributing
 
