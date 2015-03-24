@@ -18,7 +18,31 @@ describe('Skytap', function() {
       var skytap = Skytap.init({ test: true });
       expect(skytap._config).to.be.an('object');
       expect(skytap._config.test).to.be.true;
-    });  
+    });
+
+    it('passes correct authorization headers on request', function () {
+      var auth = {
+        username: 'testUser',
+        token: 'testToken'
+      }
+        , authHeader = 'Basic ' + (new Buffer(auth.username + ':' + auth.token).toString('base64'))
+        , skytap = Skytap.init({
+            username: 'testUser',
+            token: 'testToken'
+          })
+          // Just using the environments command to test this
+        , nock = require('nock')('https://cloud.skytap.com:443', {
+           reqheaders: {
+             'authorization': authHeader
+           }
+          })
+            .get('/configurations')
+            .reply(200);
+
+          return skytap.environments.list().then(function () {
+            nock.done();
+          });
+    });
 
   });
 
@@ -38,5 +62,4 @@ describe('Skytap', function() {
     });
 
   });
-
 });
