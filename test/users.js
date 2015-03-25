@@ -14,6 +14,15 @@ describe('Skytap.users', function () {
         return _.bind(skytap.users.list, skytap.users);
       });
     });
+
+    it('takes optional parameters', function () {
+      return nockspect(function (nock) {
+        nock.get('/users?foo=bar').reply(200);
+        return _.bind(skytap.users.list, skytap.users, {
+          foo: 'bar'
+        });
+      });
+    });
   });
 
   describe('.get', function () {

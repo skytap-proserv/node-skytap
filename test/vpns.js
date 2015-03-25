@@ -14,6 +14,15 @@ describe('Skytap.vpns', function () {
         return _.bind(skytap.vpns.list, skytap.vpns);
       });
     });
+
+    it('takes optional parameters', function () {
+      return nockspect(function (nock) {
+        nock.get('/vpns?foo=bar').reply(200);
+        return _.bind(skytap.vpns.list, skytap.vpns, {
+          foo: 'bar'
+        });
+      });
+    });
   });
 
   describe('.get', function () {

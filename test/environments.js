@@ -14,6 +14,15 @@ describe('Skytap.environments', function () {
         return _.bind(skytap.environments.list, skytap.environments);
       });
     });
+
+    it('takes optional parameters', function () {
+      return nockspect(function (nock) {
+        nock.get('/configurations?foo=bar').reply(200);
+        return _.bind(skytap.environments.list, skytap.environments, {
+          foo: 'bar'
+        });
+      });
+    });
   });
 
   describe('.get', function () {
