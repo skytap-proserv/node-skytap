@@ -264,6 +264,12 @@ Please use JSHint via the grunt task `grunt validate`.
 Please add proper unit test coverage in accordance with existing test patterns (API methods do not yet have test coverage or parameter validation).
 
 ### Change Log
+####[0.4.1](/../../milestones/v0.4.1/)
+* Fixes `vms.del`
+* Fixes `environments.all` promise usage
+* Added testing to cover api calls
+* Additional uri cleanup for 
+
 ####0.4.0
 * Added support for list/get of users
 * Added support for retrieving all accessible environments and templates

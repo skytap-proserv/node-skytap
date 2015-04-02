@@ -1,6 +1,6 @@
 {
   "name": "node-skytap",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Skytap API wrapper for Node.js",
   "main": "index.js",
   "repository": "fti-technology/node-skytap",
