@@ -103,6 +103,7 @@ Refer to the source code for a full list of function calls and required paramete
 ```javascript
 // List Projects 
 skytap.projects.list(next);
+skytap.projects.list(args, next);
 
 // Get a project by id
 skytap.projects.get({ project_id: 123 }, next);
@@ -130,6 +131,7 @@ skytap.projects.removeTemplate({ project_id: 123, template_id: 333}, next);
 ```javascript
 // List environments
 skytap.environments.list(next);
+skytap.environments.list(args, next);
 
 // List all environments
 // Notes: this requires Administrator access and iterates over all users
@@ -176,6 +178,7 @@ skytap.environments.updateUserdata({ configuration_id: 1234, contents: 'Somethin
 ```javascript
 // List of templates
 skytap.templates.list(next);
+skytap.templates.list(args, next);
 
 // List all templates
 // Notes: this requires Administrator access and iterates over all users
@@ -222,6 +225,7 @@ skytap.vms.userdata({ template_id: 2222, vm_id: 2, contents: 'Something' }, next
 ```javascript
 // List VPNs
 skytap.vpns.list(next);
+skytap.vpns.list(args, next);
 
 // Get a VPN
 skytap.vpns.get({ vpn_id: 'vpn-123' }, next);
@@ -244,6 +248,7 @@ skytap.vpns.disconnect({ configuration_id: 1234, network_id: 555, vpn_id: 'vpn-1
 
 // List all accessible users
 skytap.users.list(next);
+skytap.users.list(args, next);
 
 // Get a user
 skytap.users.get({ user_id: 100 }, next);
@@ -254,6 +259,10 @@ skytap.users.get({ user_id: 100 }, next);
 Parameters to an API call that aren't recognized will be added to the query string. One use of this is to query an environment without changing its idle time:
 
 `environments.get({ configuration_id: 1234, keep_idle: true }`
+
+List methods support optional arguments that can be passed.  For example, when using the v2 API calls to you can scope requests to the company and apply paging by doing the following:
+
+`environments.list({ scope: 'company', offset: 0, count: 100 }, next);`
 
 ### Contributing
 
