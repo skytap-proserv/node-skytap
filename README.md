@@ -273,6 +273,9 @@ Please use JSHint via the grunt task `grunt validate`.
 Please add proper unit test coverage in accordance with existing test patterns (API methods do not yet have test coverage or parameter validation).
 
 ### Change Log
+####[0.5.0](/../../milestones/v0.5.0/)
+* Adds optional option argument to list functions
+
 ####[0.4.1](/../../milestones/v0.4.1/)
 * Fixes `vms.del`
 * Fixes `environments.all` promise usage
