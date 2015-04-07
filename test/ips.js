@@ -14,6 +14,15 @@ describe('Skytap.ips', function () {
         return _.bind(skytap.ips.list, skytap.ips);
       });
     });
+
+    it('takes optional parameters', function () {
+      return nockspect(function (nock) {
+        nock.get('/ips?foo=bar').reply(200);
+        return _.bind(skytap.ips.list, skytap.ips, {
+          foo: 'bar'
+        });
+      });
+    });
   });
 
   describe('.attach', function () {

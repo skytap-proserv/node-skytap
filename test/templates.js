@@ -14,6 +14,15 @@ describe('Skytap.templates', function () {
         return _.bind(skytap.templates.list, skytap.templates);
       });
     });
+
+    it('takes optional parameters', function () {
+      return nockspect(function (nock) {
+        nock.get('/templates?foo=bar').reply(200);
+        return _.bind(skytap.templates.list, skytap.templates, {
+          foo: 'bar'
+        });
+      });
+    });
   });
 
   describe('.get', function () {

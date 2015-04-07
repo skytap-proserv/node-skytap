@@ -14,6 +14,15 @@ describe('Skytap.projects', function () {
         return _.bind(skytap.projects.list, skytap.projects);
       });
     });
+
+    it('takes optional parameters', function () {
+      return nockspect(function (nock) {
+        nock.get('/projects?foo=bar').reply(200);
+        return _.bind(skytap.projects.list, skytap.projects, {
+          foo: 'bar'
+        });
+      });
+    });
   });
 
   describe('.get', function () {
