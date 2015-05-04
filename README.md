@@ -255,11 +255,24 @@ skytap.users.get({ user_id: 100 }, next);
 
 ```
 
-####Usage
+####Usage Reports
 ```javascript
 
 // Create a report
 skytap.usage.create({ results_format: 'csv', resouce_type: 'svms', region: 'all', group_by: 'user', aggregate_by: 'month', start_date: '2015/04/01 00:00:00 -0800', end_date: '2015/04/30 23:59:59 -0800', utc: true }, next);
+
+// Check a report status
+skytap.usage.check({ report_id: 123456 }, next);
+
+// Retrieve report results
+skytap.usage.fetch({ report_id: 123456 }, next);
+```
+
+####Audit Reports
+```javascript
+
+// Create a report
+skytap.usage.create({ date_start: { year: '2015', month: '04', day: '30', hour: '00', minute: '00' }, date_end: { year: '2015', month: '04', day: '30', hour: '23', minute: '59' } }, next);
 
 // Check a report status
 skytap.usage.check({ report_id: 123456 }, next);
@@ -286,6 +299,9 @@ Please use JSHint via the grunt task `grunt validate`.
 Please add proper unit test coverage in accordance with existing test patterns (API methods do not yet have test coverage or parameter validation).
 
 ### Change Log
+
+####[0.7.0](/../../milestones/v0.7.0/)
+* Adds support for audit report generation/retrieval
 
 ####[0.6.0](/../../milestones/v0.6.0/)
 * Adds support for report generation/retrieval
