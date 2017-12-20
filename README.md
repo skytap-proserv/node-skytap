@@ -18,7 +18,7 @@ var Skytap = require('node-skytap');
 
 You can obtain your API token
 ```javascript
-var params = { 
+var params = {
   username: 'skytap_username',
   password: 'sktyap_password'
 };
@@ -28,7 +28,7 @@ var token = Skytap.token(params, function(err, token) {
 })
 ```
 
-You should make calls using your token, though you can use the password if you so choose. 
+You should make calls using your token, though you can use the password if you so choose.
 
 To obtain a new instance of the API Client, use the `init` static function and include your `username` and `token`.
 ```javascript
@@ -64,7 +64,7 @@ If you want to use different credentials per-request you can do so by creating a
 
 ```javascript
 // create an API client for user1
-var user1 = Skytap.init({ 
+var user1 = Skytap.init({
   username: 'skytap_user1',
   token: 'skytap_user1_token'
 });
@@ -101,7 +101,7 @@ Refer to the source code for a full list of function calls and required paramete
 
 ####Projects
 ```javascript
-// List Projects 
+// List Projects
 skytap.projects.list(next);
 skytap.projects.list(args, next);
 
@@ -272,13 +272,13 @@ skytap.usage.fetch({ report_id: 123456 }, next);
 ```javascript
 
 // Create a report
-skytap.usage.create({ date_start: { year: '2015', month: '04', day: '30', hour: '00', minute: '00' }, date_end: { year: '2015', month: '04', day: '30', hour: '23', minute: '59' } }, next);
+skytap.audit.create({ date_start: { year: '2015', month: '04', day: '30', hour: '00', minute: '00' }, date_end: { year: '2015', month: '04', day: '30', hour: '23', minute: '59' } }, next);
 
 // Check a report status
-skytap.usage.check({ report_id: 123456 }, next);
+skytap.audit.check({ report_id: 123456 }, next);
 
 // Retrieve report results
-skytap.usage.fetch({ report_id: 123456 }, next);
+skytap.audit.fetch({ report_id: 123456 }, next);
 ```
 
 ####Additional Parameters
@@ -300,6 +300,9 @@ Please add proper unit test coverage in accordance with existing test patterns (
 
 ### Change Log
 
+####[0.7.1](/../../milestones/v0.7.1/)
+* Fixed Audit report generation/retrieval
+
 ####[0.7.0](/../../milestones/v0.7.0/)
 * Adds support for audit report generation/retrieval
 
@@ -313,7 +316,7 @@ Please add proper unit test coverage in accordance with existing test patterns (
 * Fixes `vms.del`
 * Fixes `environments.all` promise usage
 * Added testing to cover api calls
-* Additional uri cleanup for 
+* Additional uri cleanup for
 
 ####0.4.0
 * Added support for list/get of users
@@ -326,7 +329,7 @@ Please add proper unit test coverage in accordance with existing test patterns (
 * Added template list/get/create/update/delete
 * Added add/remote template from project
 
-####0.1.3 
+####0.1.3
 * Moved repository to fti-technology
 
 ####0.1.2
